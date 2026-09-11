@@ -1,13 +1,47 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        Queue queue = new Queue(false);   // cola normal
+
+        //Modulo isEmpty
+        System.out.println(queue.isEmpty());
+
+        //Modulo insert
+        queue.insert("A");
+        queue.insert("B");
+        queue.insert("C");
+        queue.insert("D");
+
+        //Modulo toString
+        System.out.println(queue.toString());
+
+        //Modulo size
+        System.out.println(queue.size());
+
+        //Modulo search
+        System.out.println(queue.search("B"));
+        System.out.println(queue.search("X"));
+
+        //Modulo extract
+        System.out.println(queue.extract());
+        System.out.println(queue.toString());
+
+        //Modulo clear
+        queue.clear();
+        System.out.println(queue.toString());
+        System.out.println(queue.isEmpty());
+        System.out.println(queue.size());
+
+        // Prioridad
+        Queue colaPrioridad = new Queue(true);
+
+        colaPrioridad.insert("Angel Fabian", 5);
+        colaPrioridad.insert("Calvo", 1);
+        colaPrioridad.insert("Martin", 5);
+        colaPrioridad.insert("Adriancito", 0);
+
+        System.out.println(colaPrioridad.toString());
+        System.out.println(colaPrioridad.extract());
+        System.out.println(colaPrioridad.extract());
     }
 }
